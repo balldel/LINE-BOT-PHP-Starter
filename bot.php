@@ -19,10 +19,27 @@ if (!is_null($events['events'])) {
             $replyToken = $event['replyToken'];
 
             if ($event['message']['text'] == 'สวัสดี') {
+                //check user display
+                $urlprofile = 'https://api.line.me/v2/bot/profile/U9d261d005044ab0f2cba21b69278a155';
+
+                $headersprofile = array('Authorization: Bearer ' . $access_token);
+
+                $ch = curl_init($urlprofile);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, $headersprofile);
+                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+                $result = curl_exec($ch);
+                curl_close($ch);
+                
+                // Get POST body content
+                $contentprofile = file_get_contents('php://input');
+                // Parse JSON
+                $profile = json_decode($content, true);
+
                 // Build message to reply back
                 $messages = [
                     'type' => 'text',
-                    'text' => 'สวัสดีครับ ผม Next ครับ พี่'.$userID
+                    'text' => 'สวัสดีครับ ผม Next ครับ พี่' . $profile['displayName']
                 ];
 
                 // Make a POST Request to Messaging API to reply to sender
