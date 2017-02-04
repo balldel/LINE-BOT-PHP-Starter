@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 
             if ($event['message']['text'] == 'สวัสดี') {
                 //check user display
-                $urlprofile = 'https://api.line.me/v2/bot/profile/'.$userID;
+                $urlprofile = 'https://api.line.me/v2/bot/profile/U9d261d005044ab0f2cba21b69278a155';
 
                 $headersprofile = array('Authorization: Bearer ' . $access_token);
 
@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
                 // Build message to reply back
                 $messages = [
                     'type' => 'text',
-                    'text' => 'สวัสดีครับ ผม Next ครับ พี่ ' . $profile['displayName']
+                    'text' => 'สวัสดีครับ ผม Next ครับ พี่ ' . $userID
                 ];
 
                 // Make a POST Request to Messaging API to reply to sender
