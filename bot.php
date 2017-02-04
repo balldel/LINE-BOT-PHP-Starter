@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 
             if ($event['message']['text'] == 'สวัสดี') {
                 //check user display
-                $urlprofile = 'https://api.line.me/v2/bot/profile/U9d261d005044ab0f2cba21b69278a155';
+                $urlprofile = 'https://api.line.me/v2/bot/profile/'.$userID;
 
                 $headersprofile = array('Authorization: Bearer ' . $access_token);
 
