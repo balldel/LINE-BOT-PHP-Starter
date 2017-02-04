@@ -15,13 +15,14 @@ if (!is_null($events['events'])) {
             // Get text sent
             //$text = $event['message']['text'];
             // Get replyToken
+            $userID = $event['source']['userId'];
             $replyToken = $event['replyToken'];
 
             if ($event['message']['text'] == 'สวัสดี') {
                 // Build message to reply back
                 $messages = [
                     'type' => 'text',
-                    'text' => 'สวัสดีครับ ผม Next ครับ'
+                    'text' => 'สวัสดีครับ ผม Next ครับ พี่'.$userID
                 ];
 
                 // Make a POST Request to Messaging API to reply to sender
