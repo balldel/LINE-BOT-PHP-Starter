@@ -15,7 +15,7 @@ if (!is_null($events['events'])) {
             // Get text sent
             //$text = $event['message']['text'];
             // Get replyToken
-            $userID = $event['source']['userId'];
+            $userID = $event['userId'];
             $replyToken = $event['replyToken'];
 
             if ($event['message']['text'] == 'สวัสดี') {
