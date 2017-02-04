@@ -28,13 +28,9 @@ if (!is_null($events['events'])) {
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_HTTPHEADER, $headersprofile);
                 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-                $result = curl_exec($ch);
+                $profile = curl_exec($ch);
                 curl_close($ch);
-                
-                // Get POST body content
-                $contentprofile = file_get_contents('php://input');
-                // Parse JSON
-                $profile = json_decode($content, true);
+                                
 
                 // Build message to reply back
                 $messages = [
