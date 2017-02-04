@@ -16,5 +16,5 @@ curl_close($ch);
 //$json_string = json_encode($result, JSON_PRETTY_PRINT);
 $profile = json_decode($result, true);
 
-echo $profile;
+echo $profile['displayName'];
 
